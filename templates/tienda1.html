@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+{% block title %}Tienda • Maquillaje sin género{% endblock %}
+
+{% block hero %}
+<section class="hero hero--shop" aria-label="Portada de la tienda">
+  <!-- Imagen de fondo -->
+  <div class="hero__media">
+    <img
+      class="hero__img"
+      src="{{ url_for('static', filename='img/productos_tienda.jpg') }}"
+      alt="Productos de maquillaje en tonos suaves"
+    >
+  </div>
+
+  <!-- Contenido superpuesto -->
+  <div class="container hero__content">
+    <h1 class="hero__title">Nuestra Tienda</h1>
+    <p class="hero__subtitle">Explora productos diseñados para todas las identidades</p>
+    <a class="btn btn--accent" href="#categorias">Ver categorías</a>
+  </div>
+</section>
+<section id="categorias" class="shop-categories" aria-labelledby="cat-title">
+  <div class="container">
+    <h2 id="cat-title" class="shop__title">Shop by Category</h2>
+
+    <div class="cat-grid">
+      <a class="cat-card" href="#">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_labios.jpg') }}" alt="Labios">
+        </div>
+        <span class="cat-label">Labios</span>
+      </a>
+
+      <a class="cat-card" href="#">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_ojos.jpg') }}" alt="Ojos">
+        </div>
+        <span class="cat-label">Ojos</span>
+      </a>
+
+      <a class="cat-card" href="#">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_serum.jpg') }}" alt="Serum">
+        </div>
+        <span class="cat-label">Serum</span>
+      </a>
+
+      <a class="cat-card" href="#">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_cremas.jpg') }}" alt="Cremas">
+        </div>
+        <span class="cat-label">Cremas</span>
+      </a>
+
+      <a class="cat-card" href="#">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_polvos.jpg') }}" alt="Polvos">
+        </div>
+        <span class="cat-label">Polvos</span>
+      </a>
+
+      <!-- Si tienes la imagen, usa 'categoria_perfume.jpg'. Si no, reemplázala por otra. -->
+      
+    </div>
+  </div>
+</section>
+<section class="products-section" aria-labelledby="products-title">
+  <div class="container">
+    <h2 id="products-title" class="shop__title">Hand Picked Products</h2>
+
+    <!-- Tabs decorativos (sin JS) -->
+    <nav class="filter-tabs" aria-label="Filtros">
+      <a href="#" class="is-active">Cream</a>
+      <a href="#">Serum</a>
+      <a href="#">Eyeliner</a>
+    </nav>
+
+    <div class="products-grid">
+      <!-- 1 -->
+      <article class="product-card">
+        <div class="product-media">
+          <span class="product-badge product-badge--new">NEW</span>
+          <img src="{{ url_for('static', filename='img/productos_tienda.jpg') }}" alt="Flawless Foundation">
+        </div>
+        <h3 class="product-title">Flawless Foundation</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="4.5 de 5">★★★★☆</span>
+          <div class="price-wrap">
+            <span class="price">$39.900</span>
+            <span class="price price--old">$55.900</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-01 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+
+      </article>
+
+      <!-- 2 -->
+      <article class="product-card">
+        <div class="product-media">
+          <span class="product-badge product-badge--sale">SALE</span>
+          <img src="{{ url_for('static', filename='img/producto_brillo1.jpg') }}" alt="Premium Gloss">
+        </div>
+        <h3 class="product-title">Premium Gloss</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="5 de 5">★★★★★</span>
+          <div class="price-wrap">
+            <span class="price">$25.000</span>
+            <span class="price price--old">$31.000</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-02 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+      </article>
+
+      <!-- 3 -->
+      <article class="product-card">
+        <div class="product-media">
+          <img src="{{ url_for('static', filename='img/producto_sombra.jpg') }}" alt="Active Shadow">
+        </div>
+        <h3 class="product-title">Active Shadow</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="4 de 5">★★★★☆</span>
+          <div class="price-wrap">
+            <span class="price">$29.900</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-03 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+      </article>
+
+      <!-- 4 -->
+      <article class="product-card">
+        <div class="product-media">
+          <span class="product-badge product-badge--sale">SALE</span>
+          <img src="{{ url_for('static', filename='img/Producto_labial1.jpg') }}" alt="Liquid Lip Gloss">
+        </div>
+        <h3 class="product-title">Liquid Lip Gloss</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="5 de 5">★★★★★</span>
+          <div class="price-wrap">
+            <span class="price">$22.500</span>
+            <span class="price price--old">$27.900</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-04 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+        
+      </article>
+
+      <!-- 5 -->
+      <article class="product-card">
+        <div class="product-media">
+          <img src="{{ url_for('static', filename='img/productos_tienda.jpg') }}" alt="Natural Cream">
+        </div>
+        <h3 class="product-title">Natural Cream</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="4 de 5">★★★★☆</span>
+          <div class="price-wrap">
+            <span class="price">$35.000</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-05 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+      </article>
+
+      <!-- 6 -->
+      <article class="product-card">
+        <div class="product-media">
+          <img src="{{ url_for('static', filename='img/Producto_labial1.jpg') }}" alt="Lipstick Duo">
+        </div>
+        <h3 class="product-title">Lipstick Duo</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="4.5 de 5">★★★★☆</span>
+          <div class="price-wrap">
+            <span class="price">$28.900</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-06 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+      </article>
+
+      <!-- 7 -->
+      <article class="product-card">
+        <div class="product-media">
+          <img src="{{ url_for('static', filename='img/producto_sombra.jpg') }}" alt="Gold Shadow">
+        </div>
+        <h3 class="product-title">Gold Shadow</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="5 de 5">★★★★★</span>
+          <div class="price-wrap">
+            <span class="price">$31.500</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-07 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+      </article>
+
+      <!-- 8 -->
+      <article class="product-card">
+        <div class="product-media">
+          <img src="{{ url_for('static', filename='img/producto_brillo1.jpg') }}" alt="Brillo Gloss">
+        </div>
+        <h3 class="product-title">Brillo Gloss</h3>
+        <div class="product-meta">
+          <span class="stars" aria-label="4 de 5">★★★★☆</span>
+          <div class="price-wrap">
+            <span class="price">$24.900</span>
+          </div>
+        </div>
+        <form action="{{ url_for('cart_add') }}" method="post" class="addcart-form">
+            <input type="hidden" name="id" value="{{ p-08 }}">
+            <button type="submit" class="btn btn--accent btn--wide">
+                Agregar al carrito
+            </button>
+        </form>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+

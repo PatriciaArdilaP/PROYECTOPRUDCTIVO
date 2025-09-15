@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Pedido confirmado{% endblock %}
+
+{% block content %}
+<section class="confirm-page">
+  <div class="container">
+    <div class="confirm-card">
+      <div class="confirm-head">
+        <div class="confirm-check" aria-hidden="true">✓</div>
+        <div>
+          <h1 class="confirm-title">¡Gracias por tu compra!</h1>
+          <p class="confirm-subtitle">
+            Tu pedido fue recibido correctamente.
+          </p>
+        </div>
+      </div>
+
+      <div class="order-code" aria-label="Número de pedido">
+        Nº de pedido: <strong>{{ order_id }}</strong>
+      </div>
+
+      <div class="confirm-grid">
+        <!-- Columna izquierda: estado -->
+        <div class="confirm-left">
+          <h2 class="section-title">Estado del pedido</h2>
+          <ol class="status-steps" aria-label="Progreso del pedido">
+            <li class="step step--done">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Pedido recibido</span>
+            </li>
+            <li class="step step--active">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Procesando</span>
+            </li>
+            <li class="step">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Enviado</span>
+            </li>
+            <li class="step">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Entregado</span>
+            </li>
+          </ol>
+
+          <p class="confirm-note">
+            Te enviamos la confirmación y próximos pasos a
+            <strong>{{ checkout.email if checkout else '' }}</strong>.
+          </p>
+        </div>
+
+        <!-- Columna derecha: datos del comprador -->
+        <aside class="confirm-right">
+          <h2 class="section-title">Resumen de contacto</h2>
+          {% if checkout %}
+          <ul class="confirm-list">
+            {% if checkout.name %}<li><strong>Nombre:</strong> {{ checkout.name }}</li>{% endif %}
+            {% if checkout.email %}<li><strong>Email:</strong> {{ checkout.email }}</li>{% endif %}
+            {% if checkout.address %}
+              <li>
+                <strong>Dirección:</strong>
+                {{ checkout.address }}{% if checkout.city %}, {{ checkout.city }}{% endif %}{% if checkout.zip %} {{ checkout.zip }}{% endif %}
+              </li>
+            {% endif %}
+          </ul>
+          {% else %}
+          <p class="muted">No encontramos datos de contacto para mostrar.</p>
+          {% endif %}
+        </aside>
+      </div>
+
+      <div class="confirm-actions">
+        <a class="btn" href="{{ url_for('tienda') }}#productos">Seguir comprando</a>
+        <a class="btn btn--accent" href="{{ url_for('home') }}">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Pago{% endblock %}
+
+{% block content %}
+<section class="payment-page">
+  <div class="container">
+    <h1>Pago</h1>
+
+    <div class="payment-layout">
+      <!-- Columna izquierda: formulario de pago (demo) -->
+      <form action="{{ url_for('payment_confirm') }}" method="post" class="form-card payment-form">
+        <h2 class="form-block-title">Método de pago</h2>
+
+        <label>Nombre en la tarjeta
+          <input type="text" required placeholder="Nombre y Apellido">
+        </label>
+
+        <label>Número de tarjeta
+          <input type="text" inputmode="numeric" autocomplete="cc-number"
+                 placeholder="4242 4242 4242 4242" required>
+        </label>
+
+        <div class="grid-3">
+          <label>Mes
+            <input type="text" inputmode="numeric" placeholder="MM" required>
+          </label>
+          <label>Año
+            <input type="text" inputmode="numeric" placeholder="AA" required>
+          </label>
+          <label>CVC
+            <input type="text" inputmode="numeric" placeholder="123" required>
+          </label>
+        </div>
+
+        <button class="btn btn--accent btn--lg" type="submit">
+          Pagar ${{ "{:,.0f}".format(total).replace(",", ".") }}
+        </button>
+
+        <p class="muted small">* Simulación de pago. Aquí integrarás tu pasarela real.</p>
+      </form>
+
+      <!-- Columna derecha: resumen -->
+      <aside class="form-card payment-summary">
+        <h2 class="form-block-title">Resumen</h2>
+
+        {% if not cart %}
+          <p>Tu carrito está vacío.</p>
+          <a class="btn btn--accent" href="{{ url_for('tienda') }}#productos">Ir a la tienda</a>
+        {% else %}
+          <ul class="summary-items">
+            {% for i in cart %}
+            <li class="summary-item">
+              <img src="{{ i.img }}" alt="{{ i.name }}">
+              <div class="summary-info">
+                <span class="summary-name">{{ i.name }}</span>
+                <span class="summary-qtyprice">x{{ i.qty }} · ${{ "{:,.0f}".format(i.price).replace(",", ".") }}</span>
+              </div>
+              <div class="summary-subtotal">
+                ${{ "{:,.0f}".format(i.price * i.qty).replace(",", ".") }}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span class="money">${{ "{:,.0f}".format(total).replace(",", ".") }}</span>
+          </div>
+          <div class="summary-row">
+            <span>Envío</span>
+            <span class="muted">Se calcula en la entrega</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <strong class="money">${{ "{:,.0f}".format(total).replace(",", ".") }}</strong>
+          </div>
+        {% endif %}
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,629 @@
+/* ===== Reset básico y variables ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --pink: #f7d6d9;           /* barra y botones */
+  --text: #111;
+  --text-soft: #2a2a2a;
+  --white: #fff;
+}
+html, body { height: 100%; }
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.5;
+}
+
+/* Contenedor general */
+.container{
+  width: min(1120px, 92%);
+  margin-inline: auto;
+}
+
+/* Accesibilidad */
+.skip-link{
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus{
+  left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem .75rem;
+  background: #000; color: #fff; border-radius: .5rem; z-index: 9999;
+}
+
+/* ===== HEADER / NAV ===== */
+.header{
+  background: var(--pink);
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+.header__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem 0;
+}
+
+.brand{
+  display: flex; align-items: center; gap: .5rem;
+  text-decoration: none; color: var(--text);
+}
+.brand__logo{ height: 36px; width: auto; display: block; }
+.brand__name{ display: none; }   /* en la maqueta solo se ve el logo */
+
+.nav__toggle{ display: none; }
+
+.nav__list{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav__link{
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 6px 2px;
+}
+.nav__link:hover{ text-decoration: underline; }
+.nav__link--active{ font-weight: 700; }
+
+/* ===== HERO ===== */
+.hero{
+  position: relative;
+  min-height: 78vh;            /* alto como en la imagen */
+  display: flex;
+  align-items: center;         /* centra verticalmente el bloque de texto */
+  overflow: hidden;
+}
+.hero__media{
+  position: absolute; inset: 0;
+}
+.hero__img{
+  width: 100%; height: 100%;
+  object-fit: cover;           /* llena el ancho y alto */
+  object-position: center;     /* encuadre equilibrado */
+  display: block;
+}
+/* Gradiente oscuro para mejorar contraste en la izquierda (como en la maqueta) */
+.hero::after{
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.55) 0%,
+    rgba(0,0,0,.35) 40%,
+    rgba(0,0,0,.12) 70%,
+    rgba(0,0,0,0) 100%
+  );
+  pointer-events: none;
+}
+
+.hero__content{
+  position: relative;          /* sobre la imagen */
+  z-index: 1;
+  padding: 8rem 0;             /* respiración superior e inferior */
+  max-width: 520px;
+}
+
+.hero__title{
+  color: var(--white);
+  font-weight: 800;
+  line-height: 1.30;
+  font-size: clamp(28px, 4.2vw, 48px);
+  letter-spacing: .2px;
+  margin-bottom: .5rem;
+}
+
+.hero__subtitle{
+  color: rgba(255,255,255,.85);
+  font-size: 25px;
+  max-width: 440px;
+  margin-bottom: 5rem;
+}
+
+/* Botones del hero (en columna, redondeados y rosados) */
+.hero__actions{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 240px;
+}
+/* === Alinear el hero a la izquierda (override del .container) === */
+.hero__content.container{
+  /* rompe el centrado automático y fija un margen a la izquierda */
+  margin-right: auto;
+  margin-left: clamp(48px, 9vw, 160px);;
+  width: min(560px, 92%); /* ancho cómodo para el bloque de texto */
+  text-align: left;
+}
+
+/* Botones alineados al inicio y con ancho visual consistente */
+.hero__actions{
+  align-items: center;   /* izquierda */
+}
+.btn{
+  min-width: 230px;          /* como en la maqueta */
+}
+
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 14px 24px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  text-align: center;
+  color: var(--text);
+}
+.btn--primary,
+.btn--secondary,
+.btn--ghost{
+  background: var(--pink);     /* los tres iguales como en la imagen */
+}
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.22);
+}
+/* ===== Sección: Nuestros valores ===== */
+/* ===== Sección: Nuestros valores (v2) ===== */
+.values{
+  background: #f2f2f2;
+  padding: clamp(28px, 6vw, 56px) 0;
+}
+
+.values__title{
+  text-align: center;
+  font-size: clamp(25px, 3.6vw, 40px);
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: clamp(18px, 3.5vw, 32px);
+  color: #111;
+}
+
+.values__grid{
+  display: flex;
+  gap: clamp(12px, 2.2vw, 28px);     /* más espacio útil */
+  align-items: stretch;
+  justify-content: center;
+}
+
+.value-card{
+  flex: 1 1 0;
+  background: #fff;
+  border-radius: 20px;                /* más redondo */
+  padding: clamp(20px, 3.6vw, 32px);  /* un poco más de relleno */
+  text-align: center;
+  box-shadow: 0 10px 0 rgba(0,0,0,.08), 0 10px 24px rgba(0,0,0,.06);
+  max-width: 380px;                   /* más anchas */
+  min-height: 150px;                  /* más altas */
+  margin-inline: auto;
+}
+
+.value-card__title{
+  font-weight: 700;
+  font-size: clamp(16px, 1.5vw, 25px);
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.value-card__text{
+  font-weight: 700;
+  font-size: clamp(14px, 1.25vw, 20px);
+  line-height: 1.35;
+  color: #1f1f1f;
+}
+
+/* ===== Separador sutil entre bloques ===== */
+.section-sep{
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,.10), transparent);
+  margin: clamp(8px, 2.2vw, 14px) 0;   /* línea muy discreta */
+}
+
+/* ===== Sección: Productos ===== */
+.products{
+  background: #f2f2f2;                          /* mismo fondo que "Valores" */
+  padding: clamp(28px, 6vw, 56px) 0;            /* mismos espacios */
+}
+
+.products__title{
+  text-align: center;
+  font-weight: 800;
+  color: #111;
+  font-size: clamp(20px, 2.6vw, 28px);          /* igual que el título de "Valores" */
+  margin-bottom: clamp(18px, 3.5vw, 32px);
+}
+
+.products__grid{
+  display: flex;
+  gap: clamp(12px, 2.2vw, 28px);                /* mismo ritmo de separación */
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: clamp(18px, 3.5vw, 32px);
+}
+
+.product-card{
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 0 rgba(0,0,0,.08), 0 10px 24px rgba(0,0,0,.06);
+  padding: clamp(14px, 2.6vw, 22px);
+  text-align: center;
+  width: 100%;
+  max-width: 340px;                               /* ligeramente compactas */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-card__media{
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.product-card__img{
+  display: block;
+  width: 100%;
+  height: clamp(140px, 18vw, 180px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-card__name{
+  font-weight: 700;
+  font-size: clamp(15px, 1.5vw, 18px);
+  color: #161616;
+  margin-top: 6px;
+}
+
+.product-card__price{
+  font-weight: 600;
+  font-size: clamp(14px, 1.25vw, 16px);
+  color: #222;
+  margin-top: 4px;
+}
+
+/* CTA inferior centrada y con ancho cómodo */
+.products__cta{
+  display: flex;
+  justify-content: center;
+}
+.btn--wide{
+  min-width: 280px;
+}
+/* ===== Separador sutil (reutilizable) ===== */
+.section-sep{
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,.10), transparent);
+  margin: clamp(8px, 2.2vw, 14px) 0;
+}
+
+/* ===== Sección: Aprender / Artículos destacados ===== */
+.learn{
+  background: #f2f2f2;                       /* mismo fondo que valores/productos */
+  padding: clamp(28px, 6vw, 56px) 0;         /* mismos espacios verticales */
+}
+
+.learn__title{
+  text-align: center;
+  color: #111;
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 28px);       /* igual escala de títulos */
+  margin-bottom: clamp(18px, 3.5vw, 32px);
+}
+
+.learn__grid{
+  display: flex;
+  gap: clamp(14px, 2.6vw, 32px);
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;                            /* por si el ancho es justo */
+}
+
+/* Fichas MÁS GRANDES que productos */
+/* ===========================
+   Sección: Aprender / Artículos destacados
+   =========================== */
+.learn{
+  /* mismo fondo y ritmo que el resto de secciones */
+  background: #f2f2f2;
+  padding: clamp(28px, 6vw, 56px) 0;
+}
+
+.learn__title{
+  text-align: center;
+  color: #111;
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 28px);
+  margin-bottom: clamp(18px, 3.5vw, 32px);
+}
+/* ===== Sección: Equipo ===== */
+.team{
+  background: #f2f2f2;                         /* mismo fondo que el resto */
+  padding: clamp(28px, 6vw, 56px) 0;
+}
+
+.team__title{
+  text-align: center;
+  font-weight: 800;
+  color: #111;
+  font-size: clamp(20px, 2.6vw, 28px);
+  margin-bottom: clamp(18px, 3.5vw, 32px);
+}
+
+/* Grid responsivo: 1–2–4 columnas */
+.team__grid{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: clamp(18px, 3vw, 36px);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-items: start;
+  justify-items: center;
+}
+
+.teammate{
+  text-align: center;
+}
+
+/* Avatar redondo con sombra */
+.teammate__figure{
+  margin: 0 0 12px 0;
+  width: clamp(140px, 16vw, 210px);
+  height: clamp(140px, 16vw, 210px);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18), 0 4px 0 rgba(0,0,0,.06);
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.teammate__avatar{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .18s ease;
+}
+
+.teammate__figure:hover .teammate__avatar{
+  transform: scale(1.03);
+}
+
+.teammate__name{
+  font-weight: 800;
+  color: #111;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.teammate__fact{
+  color: #2a2a2a;
+  font-size: clamp(13px, 1.2vw, 15px);
+  line-height: 1.35;
+}
+/* Responsive: una debajo de otra */
+@media (max-width: 900px){
+  .values__grid{ flex-direction: column; }
+  .value-card{
+    width: 100%;
+    max-width: 560px;
+    min-height: 148px;
+  }
+}
+
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px){
+  .nav__list{ gap: 18px; }
+  .hero{ min-height: 68vh; }
+  .hero__content{ padding: 4rem 0; }
+  .hero__subtitle{ font-size: 16px; }
+  .hero__actions{ max-width: 100%; }
+  .hero__content.container{ margin-left: 24px; }
+}
+@media (max-width: 480px){
+  .brand__logo{ height: 30px; }
+  .nav__list{ gap: 14px; }
+}
+@media (min-width: 1400px){
+  .hero__content.container{ margin-left: 180px; }
+}
+/* === Ajustes responsive (móviles) === */
+@media (max-width: 600px){
+  /* coloca el bloque más arriba */
+  .hero{ 
+    align-items: flex-start;   /* deja de centrar verticalmente */
+    min-height: 70vh;
+  }
+  .hero__content{
+    padding-top: 2.25rem;      /* súbelo ligeramente */
+    padding-bottom: 3rem;
+    margin-left: 20px;         /* margen cómodo en móvil */
+  }
+
+  /* textos más pequeños */
+  .hero__title{
+    font-size: clamp(22px, 8.5vw, 32px);
+    margin-bottom: .4rem;
+  }
+  .hero__subtitle{
+    font-size: 14.5px;
+    line-height: 1.45;
+    max-width: 92%;
+    margin-bottom: 1.25rem;
+  }
+
+  /* botones un poco más compactos */
+  .btn{
+    font-size: 15.5px;
+    padding: 12px 18px;
+    min-width: 200px;
+  }
+}
+
+/* Extra compacto para pantallas muy pequeñas */
+@media (max-width: 380px){
+  .hero__content{ padding-top: 1.75rem; }
+  .hero__title{ font-size: 21px; }
+  .hero__subtitle{ font-size: 13.5px; }
+  .btn{
+    font-size: 14.5px;
+    padding: 11px 16px;
+    min-width: 180px;
+  }
+  .learn__grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 3vw, 28px);
+}
+}
+
+/* --- MÓVIL: colocar los botones al fondo del hero, en columna --- */
+@media (max-width: 600px){
+  .hero{
+    min-height: 85vh;
+    align-items: stretch;                 /* deja que el hijo use todo el alto */
+  }
+
+  .hero__content{
+    display: flex;
+    flex-direction: column;               /* título, subtítulo y acciones en columna */
+    min-height: 85vh;                     /* ocupa el alto del hero */
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .hero__actions{
+    margin-top: auto;                     /* EMPUJA los botones hacia abajo */
+    align-items: stretch;                 /* todos del mismo ancho */
+    width: min(340px, 92%);
+    max-width: none;                      /* sobreescribe el max-width previo */
+  }
+
+  .btn{ width: 100%; } 
+  .teammate__figure{
+    width: 140px; height: 140px;   /* un toque más compacto en móvil */
+  }                   /* cada botón ocupa todo el ancho del bloque */
+}
+@media (max-width: 900px){
+  .values__grid{
+    flex-direction: column;
+  }
+  .value-card{
+    width: 100%;
+    max-width: 560px; 
+    min-height: 148px;              /* ancho cómodo en móvil/tablet */
+  }
+  .products__grid{ flex-direction: column; }
+  .product-card{ max-width: 560px; margin-inline: auto; }
+  .btn--wide{ min-width: 240px; }
+   .learn__grid{
+    flex-direction: column;
+  }
+  
+}
+
+/* Tarjeta grande */
+.learn__grid{
+    display: flex;
+    gap: clamp(14px, 2.6vw, 32px);
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;                            /* por si el ancho es justo */
+}
+.learn-card{
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 12px 0 rgba(0,0,0,.08), 0 12px 26px rgba(0,0,0,.06);
+  padding: clamp(18px, 3vw, 28px);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;                /* para que las dos columnas queden parejas */
+  margin-inline: auto;
+}
+
+.learn-card__title{
+  font-weight: 800;
+  color: #111;
+  font-size: clamp(16px, 1.8vw, 22px);
+  margin-bottom: 12px;
+}
+
+/* Imagen amplia con esquinas redondeadas */
+.learn-card__media{
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 0 auto 12px;
+  width: 100%;
+}
+
+.learn-card__img{
+  display: block;
+  width: 100%;
+  height: clamp(200px, 26vw, 300px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+}
+
+.learn-card__intro{
+  color: #2a2a2a;
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.45;
+  margin: 6px auto 10px;
+  max-width: 92%;
+}
+
+.learn-card__link{
+  font-weight: 800;
+  color: #111;
+  text-decoration: none;
+  margin-top: 6px;
+}
+.learn-card__link:hover{
+  text-decoration: underline;
+}
+/* ===== Aprender: layout definitivo ===== */
+
+/* Base: 1 columna (móvil/tablet) */
+.learn__grid{
+  display: grid !important;         /* fuerza grid si quedó flex en otro lado */
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 3vw, 28px);
+}
+
+/* Desktop: 2 columnas */
+@media (min-width: 992px){          /* subimos el corte a 992px (desktop) */
+  .learn__grid{
+    display: grid !important;
+    /* mínimo más amable para que quepan incluso con contenedores estrechos */
+    grid-template-columns: repeat(2, minmax(360px, 1fr));
+    align-items: stretch;
+    gap: 28px;
+  }
+  .learn-card{
+    max-width: none;                /* quita límites que impiden la 2ª columna */
+    height: 100%;
+  }
+  .learn-card__img{
+    height: clamp(220px, 22vw, 300px);
+  }
+  .team__grid{ grid-template-columns: repeat(4, minmax(180px, 1fr)); }
+}
+
+/* Opcional: ensancha un poco el contenedor de esta sección si usas uno muy estrecho */
+.learn .container{
+  width: min(1200px, 92%);
+}
+
+
+
+

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<section class="checkout-page">
+  <div class="container">
+    <h1>Checkout</h1>
+
+    <form action="{{ url_for('checkout_post') }}" method="post" class="form-card">
+      <div class="grid-2">
+        <label>Nombre
+          <input type="text" name="name" value="{{ data.name or '' }}" placeholder="Nombre completo">
+        </label>
+        <label>Email*
+          <input type="email" name="email" value="{{ data.email or '' }}" required placeholder="tucorreo@dominio.com">
+        </label>
+      </div>
+
+      <label>Dirección*
+        <input type="text" name="address" value="{{ data.address or '' }}" required placeholder="Calle 123 #45-67">
+      </label>
+
+      <div class="grid-2">
+        <label>Ciudad
+          <input type="text" name="city" value="{{ data.city or '' }}" placeholder="Ciudad">
+        </label>
+        <label>Código Postal
+          <input type="text" name="zip" value="{{ data.zip or '' }}" placeholder="XXXXX">
+        </label>
+      </div>
+
+      <div class="checkout-summary">
+        <span>Artículos: {{ cart|length }}</span>
+        <span>Total: <strong>${{ "{:,.0f}".format(total).replace(",", ".") }}</strong></span>
+      </div>
+
+      <button class="btn btn--accent btn--lg" type="submit">Continuar al Pago</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
