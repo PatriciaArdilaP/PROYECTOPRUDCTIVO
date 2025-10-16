@@ -1,0 +1,452 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #320A6B;
+}
+.menu ul li {
+  margin-left: 150px;
+  text-decoration: none;
+  
+
+}
+.menu ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0); /* opcional para que se vea mejor sobre fondo oscuro */
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.menu ul li a:hover {
+  color: #000000; /* Cambia el color al pasar el mouse */
+}
+.header{
+    background-image:
+    ("imagen4.jpeg");
+    padding: 20px;
+    background-size: cover;   
+    text-align: center;
+    display : flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+   
+    height: 100vh;
+}
+.header h1 {
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+}
+.header span{
+    display: block;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
+}
+.header p{
+    display: block;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+}
+.header-text button{
+    background-color: #4bb850;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    
+}
+.header{
+    background-image: url("IMG/imagen4.jpeg");
+    padding: 20px;
+    background-size: cover;   
+    text-align: center;
+    display : flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+   
+    height :100vh;
+}
+.header h1 {
+    font-size: 3rem;
+    
+    font-family: 'Oswald', sans-serif;
+}
+.header span{
+    display: block;
+    font-size: 1.5rem;
+    
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
+}
+
+.header p{
+    display: block;
+    font-size: 1.2rem;
+ 
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+}
+
+.header-text button{
+    background-color: #c7b991;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    
+}
+.tecnologias {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    margin-bottom: 40px ;
+    gap: 20px;
+    font-size: 40px;
+}
+.tecnologias-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tecnologias-icon-text {
+  margin-top: 5px;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: 'Oswald', sans-serif;
+  color: #000000;
+}
+
+.tecnologias-icon:hover .tecnologias-icon-text {
+  opacity: 1;
+}
+
+.habi{
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    margin-top: 40px;
+    background-color: rgba(165, 228, 162, 0.348);
+    padding: 30px;
+    padding-bottom: 100px;
+}
+.habi-secciones{
+    display: flex;
+    flex-direction: row;
+   
+    margin-top: 60px;
+    justify-content: center ;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+
+.habi h2 {
+    font-size: 1rem;
+    
+    
+    margin-bottom: 20px;
+    
+}
+.habi-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    
+}
+.habi-item .habi-numero {
+    font-size: 60px;
+   
+    margin-right: 50px;
+    font-family: 'Oswald', sans-serif;   
+}
+.habi-descrip h3{
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+
+}
+.habi-descrip p{
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.habi-item{
+    width: 100%;
+}
+
+
+
+
+.habi-seccion-dos {
+  position: relative;
+  width: 100%;
+  height: 400px; /* ajusta según necesites */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 20%;
+  
+}
+
+.habi-seccion-dos-img2 img {
+  position: absolute;
+  width: 250px;
+  top: 0;
+  left: 60%;
+  z-index: 1;
+  border-radius: 10px;
+}   
+
+.habi-seccion-dos-img1 img {
+  position: absolute;
+  width: 250px;
+  top: 30%;
+  left: 40%;
+  z-index: 2;
+  border-radius: 10px;
+}
+.sobre-mi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  
+  padding: 80px 80px;
+  margin-top: -60px;
+}
+
+.sobre-mi-img {
+  flex: 1;
+  max-width: 400px;
+}
+
+.sobre-mi-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.sobre-mi-texto {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 700px;
+}
+
+.sobre-mi-texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.sobre-mi-texto p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.sobre-mi-texto button {
+  align-self: flex-start;
+  padding: 12px 24px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.footer{
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-info{
+    text-align: center;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-links{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.footer-links ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-info-nombre{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+
+}
+.footer-contacto ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-left: 50px;
+}
+.footer-contacto li{
+    margin: 0 10px;
+    font-size: 1.2rem;
+    padding-left: 30px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.footer-contacto a{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+
+
+}
+/* ============================= */
+/*   ESTILOS RESPONSIVOS         */
+/* ============================= */
+
+/* --- Tablets (pantallas medianas) --- */
+@media (max-width: 1024px) {
+  .menu ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header span {
+    font-size: 1.2rem;
+  }
+
+  .tecnologias {
+    gap: 15px;
+    font-size: 30px;
+  }
+
+  .habi-secciones {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .habi-seccion-dos {
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .sobre-mi {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-mi-texto h2 {
+    font-size: 2rem;
+  }
+}
+
+/* --- Celulares (pantallas pequeñas) --- */
+@media (max-width: 768px) {
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu ul li {
+    margin: 10px 0;
+  }
+
+  .header {
+    padding: 10px;
+    height: auto;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header span {
+    font-size: 1rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .tecnologias {
+    font-size: 24px;
+    gap: 10px;
+  }
+
+  .habi-item .habi-numero {
+    font-size: 40px;
+    margin-right: 20px;
+  }
+
+  .sobre-mi-img img {
+    max-width: 90%;
+  }
+
+  .sobre-mi-texto h2 {
+    font-size: 1.5rem;
+  }
+
+  .sobre-mi-texto p {
+    font-size: 0.9rem;
+  }
+
+  .footer-links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-contacto {
+    flex-direction: column;
+    text-align: center;
+  }
+}

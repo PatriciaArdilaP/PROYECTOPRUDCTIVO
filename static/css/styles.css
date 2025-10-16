@@ -1,8 +1,8 @@
 /* ===== Reset básico y variables ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root{
-  --pink: #f7d6d9;
-  --text: #111;
+  --pink: #c4c4c4;
+  --text: #000000;
   --text-soft: #2a2a2a;
   --white: #fff;
 }
@@ -10,7 +10,7 @@ html, body { height: 100%; }
 body{
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
-  background: #fff;
+  background: #fff;;
   line-height: 1.5;
 }
 ul {
