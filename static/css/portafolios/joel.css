@@ -1,0 +1,152 @@
+/* ------------------------------
+   RESETEO Y BASE
+--------------------------------*/
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  overflow-x: hidden;
+}
+h1,h2,h3 { font-weight: 600; }
+
+/* ------------------------------
+   NAV
+--------------------------------*/
+.menu {
+  position: sticky; top: 0; z-index: 20;
+  background:#0f0f0f;
+}
+.menu ul {
+  list-style: none;
+  display: flex; flex-wrap: wrap;
+  gap: 22px; justify-content: center;
+  padding: 12px 18px;
+}
+.menu a {
+  color:#fff; text-decoration:none; font-weight:600;
+  transition: color .2s ease;
+}
+.menu a:hover { color:#ff4081; }
+
+/* ------------------------------
+   HEADER
+--------------------------------*/
+.header {
+  background-image: url("/static/img/portafolios/joel/imagen.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.header-text { color:#fff; text-shadow: 2px 2px 8px rgba(0,0,0,.65); max-width: 780px; }
+.header-text span { letter-spacing: .5px; font-size: 1.1rem; font-weight:700; }
+.header-text-frase { font-family: 'Oswald', sans-serif; font-size: 2.6rem; line-height: 1.2; margin: 14px 0 10px; }
+.header p { font-size: 1.05rem; opacity: .95; }
+.header button{
+  margin-top: 18px; border: 0; cursor: pointer;
+  background:#ff4081; color:#fff; padding: 10px 24px; border-radius: 8px;
+  font-weight:700; transition: background .2s ease, transform .1s ease;
+}
+.header button:hover{ background:#e73370; }
+.header button:active{ transform: scale(.98); }
+
+/* ------------------------------
+   TECNOLOGÍAS
+--------------------------------*/
+.tecnologias{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:28px;
+  padding:52px 12px; background:#fafafa;
+}
+.tecnologias-icon{
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  font-size:2.4rem; color:#444; transition: transform .25s, color .25s;
+}
+.tecnologias-icon-text{ font-size:.95rem; color:#666; }
+.tecnologias-icon:hover{ color:#ff4081; transform: translateY(-3px) scale(1.06); }
+
+/* ------------------------------
+   HABILIDADES
+--------------------------------*/
+.habi{ padding:60px 18px; background:#fff; }
+.habi-secciones{
+  display:flex; flex-wrap:wrap; gap:42px; justify-content:space-between;
+  max-width: 1200px; margin: 0 auto;
+}
+.habi-seccion-uno{ flex: 1 1 420px; }
+.habi-seccion-uno h2{ text-align:center; color:#ff4081; margin-bottom:24px; }
+.habi-item{ display:flex; gap:16px; align-items:flex-start; margin:14px 0; }
+.habi-numero span{
+  display:inline-block; min-width: 42px; text-align:center;
+  font-family:'Oswald', sans-serif; font-size:1.6rem; color:#ff4081;
+}
+.habi-descrip h3{ margin:0; font-size:1.1rem; color:#111; }
+.habi-descrip p{ margin-top:4px; color:#555; font-size:.98rem; line-height:1.45; }
+
+.habi-seccion-dos{
+  flex: 1 1 380px;
+  display:flex; flex-direction:column; align-items:center; gap:22px;
+}
+.habi-seccion-dos img{
+  width:100%; max-width:360px; border-radius:12px; object-fit:cover;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  transition: transform .25s ease;
+}
+.habi-seccion-dos img:hover{ transform: scale(1.03); }
+
+/* ------------------------------
+   SOBRE MÍ
+--------------------------------*/
+.sobre-mi{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+  gap:44px; padding:64px 18px; background:#fdf2f7;
+}
+.sobre-mi-img img{
+  width: min(360px, 90vw); border-radius:14px; object-fit:cover;
+  box-shadow: 0 12px 28px rgba(0,0,0,.08);
+}
+.sobre-mi-texto{ max-width: 560px; }
+.sobre-mi-texto h3{ color:#ff4081; margin-bottom:8px; }
+.sobre-mi-texto h2{ font-size:1.9rem; margin-bottom:12px; }
+.sobre-mi-texto p{ color:#555; line-height:1.6; margin: 8px 0; }
+.sobre-mi-texto button{
+  margin-top:14px; background:#ff4081; color:#fff; border:0; border-radius:8px;
+  padding:10px 22px; cursor:pointer; font-weight:700; transition: background .2s;
+}
+.sobre-mi-texto button:hover{ background:#e73370; }
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+.footer{ background:#0f0f0f; color:#fff; text-align:center; padding:42px 16px; }
+.footer-info h3{ color:#ff8fb3; margin-bottom:8px; }
+.footer-links ul, .footer-contacto ul{ list-style:none; padding:0; margin: 16px 0; }
+.footer-links li, .footer-contacto li{ margin:6px 0; }
+.footer a{ color:#fff; text-decoration:none; }
+.footer a:hover{ color:#ff4081; }
+.footer-copy{ margin-top: 12px; color:#cfcfcf; font-size:.9rem; }
+
+/* ------------------------------
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 1024px){
+  .header{ min-height: 78vh; }
+  .header-text-frase{ font-size: 2.2rem; }
+}
+@media (max-width: 768px){
+  .header{ min-height: 70vh; padding: 24px; }
+  .header-text-frase{ font-size: 1.8rem; }
+  .habi-secciones{ flex-direction: column; align-items: center; }
+  .sobre-mi{ flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px){
+  .menu ul{ gap:14px; }
+  .header-text span{ font-size: 1rem; }
+  .header-text-frase{ font-size: 1.45rem; }
+  .header p{ font-size: .95rem; }
+  .habi-descrip p{ font-size: .92rem; }
+  .sobre-mi-texto h2{ font-size: 1.5rem; }
+}

@@ -140,7 +140,10 @@
         <figure class="teammate__figure">
           <img class="teammate__avatar" src="{{ url_for('static', filename='img/dani.jpeg') }}" alt="Camila Rodriguez sonriendo frente a un PC">
         </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="PortafolioDani/index.html"> Daniela Riaño</a></h3>
+        <h3 class="teammate__name">
+          <a class="teammate__link" href="{{ url_for('portafolio_dani') }}">Daniela Riaño</a>
+          </h3>
+
         <p class="teammate__fact"> lidera y guia </p>
       </li>
 
@@ -148,8 +151,11 @@
         <figure class="teammate__figure">
           <img class="teammate__avatar" src="{{ url_for('static', filename='img/kevin.webp') }}" alt="Camila Rodriguez sonriendo frente a un PC">
         </figure>
-        </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="#">Kevin Galindo</a></h3>
+        
+        <h3 class="teammate__name">
+          <a class="teammate__link" href="{{ url_for('portafolio_kevin') }}">Kevin Galindo</a>
+        </h3>
+
         <p class="teammate__fact">logistica y marketing</p>
       </li>
 
@@ -165,15 +171,28 @@
         <figure class="teammate__figure">
           <img class="teammate__avatar" src="{{ url_for('static', filename='img/joel.jpg') }}" alt="Sonia Yepez con maquillaje y rímel">
         </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="#"> Joel Avila</a></h3>
+        <h3 class="teammate__name">
+          <a class="teammate__link" href="{{ url_for('portafolio_joel') }}">Hamilton Joel Ávila</a>
+        </h3>
+
         <p class="teammate__fact">Fotografo y Diseñador grafico </p>
 
         <li class="teammate">
-        <figure class="teammate__figure">
-          <img class="teammate__avatar" src="{{ url_for('static', filename='img/juana.jpeg') }}" alt="Sonia Yepez con maquillaje y rímel">
-        </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="#"> Juana Correa</a></h3>
-        <p class="teammate__fact">Servico al cliente y redactora de contenido </p>
+            <figure class="teammate__figure">
+              <img class="teammate__avatar"
+                  src="{{ url_for('static', filename='img/juana.jpeg') }}"
+                  alt="Juana Correa con maquillaje natural">
+            </figure>
+            <h3 class="teammate__name">
+              <a class="teammate__link"
+                href="{{ url_for('portafolio_juana') }}">
+                Juana Correa
+              </a>
+            </h3>
+            <p class="teammate__fact">
+              Servicio al cliente y redactora de contenido
+            </p>
+          </li>
 
       </li>
     </ul>

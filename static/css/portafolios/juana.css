@@ -1,0 +1,309 @@
+/* ------------------------------
+   ESTILOS GENERALES
+--------------------------------*/
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* ------------------------------
+   MENÚ DE NAVEGACIÓN
+--------------------------------*/
+.menu {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #ff4081;
+}
+
+/* ------------------------------
+   ENCABEZADO (HEADER)
+--------------------------------*/
+.header {
+    background-image: url("/static/img/portafolios/juana/imagen4.jpeg");
+    background-size: contain;        /* imagen visible completa */
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;               /* altura más controlada */
+}
+
+.header-text {
+    background: none;           /* ❌ elimina el cuadro blanco */
+    padding: 20px 40px;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+.header-text span {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.header-text-frase {
+    font-size: 2rem;
+    margin: 15px 0;
+    color: #111;
+    line-height: 1.4;
+}
+
+.header p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.header button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header button:hover {
+    background-color: #e73370;
+}
+
+/* ------------------------------
+   SECCIÓN TECNOLOGÍAS
+--------------------------------*/
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 10px;
+    background-color: #f9f9f9;
+}
+
+.tecnologias-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #555;
+    font-size: 2.5rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.tecnologias-icon span {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.tecnologias-icon:hover {
+    color: #ff4081;
+    transform: scale(1.1);
+}
+
+/* ------------------------------
+   HABILIDADES
+--------------------------------*/
+.habi {
+    background-color: #fff;
+    padding: 60px 20px;
+}
+
+.habi-secciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.habi-seccion-uno {
+    flex: 1 1 350px;
+}
+
+.habi-seccion-uno h2 {
+    text-align: center;
+    color: #ff4081;
+}
+
+.habi-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.habi-numero span {
+    font-weight: bold;
+    color: #ff4081;
+    font-size: 1.2rem;
+}
+
+.habi-descrip h3 {
+    margin: 0;
+    color: #111;
+}
+
+.habi-descrip p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.habi-seccion-dos {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.habi-seccion-dos img {
+    width: 80%;
+    max-width: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ------------------------------
+   SECCIÓN SOBRE MÍ
+--------------------------------*/
+.sobre-mi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #fdf2f7;
+    padding: 60px 20px;
+}
+
+.sobre-mi-img img {
+    width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.sobre-mi-texto {
+    max-width: 500px;
+}
+
+.sobre-mi-texto h3 {
+    color: #ff4081;
+    margin-bottom: 10px;
+}
+
+.sobre-mi-texto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.sobre-mi-texto p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.sobre-mi-texto button {
+    margin-top: 20px;
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.sobre-mi-texto button:hover {
+    background-color: #e73370;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+.footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.footer-info h3 {
+    color: #ff4081;
+}
+
+.footer-links ul,
+.footer-contacto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-contacto li {
+    margin: 8px 0;
+}
+
+.footer-links a,
+.footer-contacto a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-contacto a:hover {
+    color: #ff4081;
+}
+
+.footer-copy {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+--------------------------------*/
+@media (max-width: 768px) {
+    .header-text-frase {
+        font-size: 1.5rem;
+    }
+
+    .habi-secciones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-mi {
+        flex-direction: column;
+    }
+
+    .sobre-mi-img img {
+        width: 80%;
+    }
+}

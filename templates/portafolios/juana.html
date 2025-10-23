@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ Enlace correcto al CSS de Juana -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portafolios/juana.css') }}">
+    
+    <!-- ✅ Enlace a Font Awesome (tu línea tenía error en el tag) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Juana Correa</title>
+</head>
+<body>
+
+
+<body>
+
+<!-- NAV -->
+<nav class="menu">
+    <ul>
+        <li><a href="{{ url_for('home') }}">Inicio</a></li>
+
+        <li><a href="#About">Sobre mí</a></li>
+        <li><a href="#Projects">Proyectos</a></li>
+        <li><a href="#Contact">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-text">
+        <span>JUANA VALERIA CORREA</span>
+        <h1 class="header-text-frase">
+            El que quiere cambiar,<br>
+            busca respuestas,<br>
+            no excusas.
+        </h1>
+        <p>Técnico en Desarrollo de Software</p>
+        <button>Contáctame</button>
+    </div>    
+</header>
+
+<!-- SECCIÓN TECNOLOGÍAS -->
+<section class="tecnologias">
+    <div class="tecnologias-icon"><i class="fab fa-html5"></i><span>HTML5</span></div>
+    <div class="tecnologias-icon"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+    <div class="tecnologias-icon"><i class="fa-brands fa-square-js"></i><span>JavaScript</span></div>
+    <div class="tecnologias-icon"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+    <div class="tecnologias-icon"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+    <div class="tecnologias-icon"><i class="fa-solid fa-database"></i><span>Bases de datos</span></div>
+    <div class="tecnologias-icon"><i class="fa-brands fa-python"></i><span>Python</span></div>
+</section>
+
+<!-- SECCIÓN HABILIDADES -->
+<section id="Projects" class="habi">
+    <section class="habi-secciones">
+        <section class="habi-seccion-uno">
+            <h2>Mis habilidades</h2>
+
+            <div class="habi-item"><span>01</span><h3>HTML5</h3><p>Creación de estructuras semánticas y accesibles.</p></div>
+            <div class="habi-item"><span>02</span><h3>CSS3</h3><p>Diseño responsivo y estilización avanzada.</p></div>
+            <div class="habi-item"><span>03</span><h3>JavaScript</h3><p>Interactividad y dinamismo en la web.</p></div>
+            <div class="habi-item"><span>04</span><h3>Bases de datos</h3><p>Diseño y gestión de bases de datos relacionales.</p></div>
+            <div class="habi-item"><span>05</span><h3>Git y GitHub</h3><p>Control de versiones y trabajo colaborativo.</p></div>
+            <div class="habi-item"><span>06</span><h3>Python</h3><p>Desarrollo de scripts y análisis de datos.</p></div>
+        </section>
+
+        <section class="habi-seccion-dos">
+            <div><img src="{{ url_for('static', filename='img/portafolios/juana/imagen2.jpeg') }}" alt="Habilidades"></div>
+            <div><img src="{{ url_for('static', filename='img/portafolios/juana/imagen1.jpeg') }}" alt="Habilidades"></div>
+        </section>
+    </section>
+</section>
+
+<!-- SECCIÓN SOBRE MÍ -->
+<section id="About" class="sobre-mi">
+    <section class="sobre-mi-img">
+        <img src="{{ url_for('static', filename='img/portafolios/juana/imagen3.jpeg') }}" alt="Sobre mí">
+    </section>
+
+    <section class="sobre-mi-texto">
+        <h3>Sobre mí</h3>
+        <h2>Construyendo mi camino hacia el futuro</h2>
+        <p>Soy una estudiante apasionada por las manualidades y el dibujo creativo. Me esfuerzo por mejorar mis habilidades técnicas con una actitud proactiva para resolver problemas.</p>
+        <p>Actualmente me formo en desarrollo web y me motiva aprender sobre programación, diseño y herramientas digitales que impacten positivamente en mi entorno.</p>
+        <p>Mi objetivo es seguir mejorando mi formación como técnica en programación de software.</p>
+        <button>Contáctame</button>
+    </section>
+</section>
+
+<!-- FOOTER -->
+<footer id="Contact"  class="footer">
+    <div class="footer-info">
+        <h3>JUANA CORREA</h3>
+        <p>Estudiante de desarrollo web y tecnología. Apasionada por aprender y construir soluciones digitales.</p>
+    </div>
+
+    <div class="footer-links">
+        <ul>
+            <li><a href="#Home">Inicio</a></li>
+            <li><a href="#About">Sobre mí</a></li>
+            <li><a href="#Projects">Proyectos</a></li>
+            <li><a href="#Contact">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-contacto">
+        <ul>
+            <li>Email: correafierrojuana@gmail.com</li>
+            <li>Teléfono: +57 321 433 3763</li>
+            <li><a href="https://github.com/tuperfil" target="_blank">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/tuperfil" target="_blank">LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-copy">
+        <p>© 2025 Juana Correa. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+</html>
